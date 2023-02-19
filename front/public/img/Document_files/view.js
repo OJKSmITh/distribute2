@@ -1,5 +1,5 @@
 const request = axios.create({
-    baseURL: "http://127.0.0.1:3000",
+    baseURL: "http://3.34.194.23:3000",
     withCredentials: true,
 })
 const hidden = document.querySelector("#hidden")
@@ -27,7 +27,7 @@ content.innerHTML = `${contentValue}`
 let img = document.querySelectorAll("#content img[src]")
 const boardIdx = BoardIdx.value
 const userId = loginUser.value
-const notify = io.connect(`http://127.0.0.1:3000/notify`, {
+const notify = io.connect(`http://3.34.194.23:3000/notify`, {
     path: "/socket.io",
     transports: ["websocket"],
 })

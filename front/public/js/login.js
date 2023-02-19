@@ -1,5 +1,5 @@
 const request = axios.create({
-    baseURL: "http://127.0.0.1:3000",
+    baseURL: "http://3.34.194.23:3000",
     withCredentials: true,
 })
 
@@ -105,7 +105,7 @@ form.addEventListener("submit", async (e) => {
     }
 })
 const HOST = `https://kauth.kakao.com`
-const REDIRECT_URI = `http://127.0.0.1:3000/oauth/kakao`
+const REDIRECT_URI = `http://3.34.194.23:3000/oauth/kakao`
 const REST_API_KEY = `6f3af7393558bd75aa668cd31cc22396`
 
 kakao.addEventListener("click", async (e) => {
