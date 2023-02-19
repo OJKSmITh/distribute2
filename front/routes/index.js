@@ -8,7 +8,7 @@ const upload = require("../midlewares/upload")
 const config = require("../config")
 const admin = require("./admin.routes")
 const request = axios.create({
-    baseURL: "http://3.34.194.23:3000",
+    baseURL: "http://127.0.0.1:3000",
     withCredentials: true,
 })
 
@@ -159,6 +159,7 @@ router.get("/", async (req, res, next) => {
         const { boardHot } = req
         const { userHot } = req
         const response = await request.get("/board/random")
+        console.log(response)
         const { listValue, randomUser, randomHash } = response.data
         res.render("index.html", { ...userInfo, boardHot, userHot, boardRandom: listValue, randomUser, randomHash })
     } catch (e) {

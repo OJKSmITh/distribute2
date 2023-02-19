@@ -151,6 +151,7 @@ class BoardRepository {
                 GROUP BY A.userId, A.subject, A.viewCount, A.liked, A.boardIdx, A.cateCd`,
                 { type: this.queryTypes.SELECT }
             )
+            console.log(boardRandom, "============================")
             const randomUser = []
             const randomHash = []
             for (let i = 0; i < boardRandom.length; i++) {

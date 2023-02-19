@@ -16,11 +16,11 @@ const notiWindow = document.querySelector("#notification")
 const notification = document.querySelector("#innerNotification")
 const notifyIcon = document.querySelector("#notifyIcon")
 const card = document.querySelectorAll(".flexCard > div")
-const socket = io.connect("http://3.34.194.23:3000", {
+const socket = io.connect("http://127.0.0.1:3000", {
     path: "/socket.io",
     transports: ["websocket"],
 })
-const notify2 = io.connect(`http://3.34.194.23:3000/notify`, {
+const notify2 = io.connect(`http://127.0.0.1:3000/notify`, {
     path: "/socket.io",
     transports: ["websocket"],
 })
@@ -59,7 +59,7 @@ const gnbfunction = async (e) => {
     arrow.classList.toggle("deg")
     arrow.classList.toggle("deg2")
     const response = await request.get(e.target.pathname)
-    location.href = `http://3.34.194.23:3005${e.target.pathname}`
+    location.href = `http://127.0.0.1:3005${e.target.pathname}`
     console.log(response)
 }
 const userInfoClick = (e) => {
