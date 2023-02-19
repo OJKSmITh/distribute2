@@ -1,0 +1,259 @@
+{% extends 'layout/layout.html'%} {% block css %}
+<link rel="stylesheet" href="/css/index2.css" />
+{% endblock %} {% block content %}
+<div id="communityList">
+    <!-- <div id="cate_header">
+        <span> 자유게시판 </span>
+    </div> -->
+    <div id="cate_body">
+        <div class="flexCard">
+            <!-- 한칸 -->
+            <div id="a" class="contentCard">
+                <div class="content_box">
+                    {% for item in boardRandom %}
+                    <input type="hidden" name="indexBoardIdx" id="indexBoardIdx" value="{{item.mainCd}},{{item.boardIdx}}" />
+                    {% endfor %}
+                    <div class="cardBody">
+                        <img style="background-image: url('/image/{{boardRandom[0].picture}}'); height: calc(40rem * 0.54)" />
+                    </div>
+                    <div class="cardSubject">
+                        <span>{{boardRandom[0].subject}}</span>
+                    </div>
+                    <div class="cardHeader">
+                        <div class="userPic userPicSize" style="background-image:url('/image/{{randomUser[0].userPic}}') ;"></div>
+                        <div class="userid">
+                            <span>{{randomUser[0].userId}}</span>
+                        </div>
+                        <div class="status">
+                            <span>❤️</span>
+                            <span>{{boardRandom[0].liked}}</span>
+                            <span>👁</span>
+                            <span>{{boardRandom[0].viewCount}}</span>
+                        </div>
+                    </div>
+                    <div class="textareas">
+                        <input type="hidden" name="hidden" id="hidden1" value="{{boardRandom[0].content}}" />
+                        <h1 class="textSub">{{boardRandom[0].subject}}</h1>
+                        <div class="textCon1">{{boardRandom[0].content}}</div>
+                        {% for Hash in randomHash[0] %}
+                        <ul id="hashtag">
+                            <li class="textHash">{{Hash.tag}}</li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- 한칸 끝 -->
+            <!-- 한칸 -->
+            <div id="b" class="contentCard">
+                <div class="content_box">
+                    <div class="cardBody">
+                        <img style="background-image: url('/image/{{boardRandom[1].picture}}'); height: calc(40rem * 0.54)" />
+                    </div>
+                    <div class="cardSubject">
+                        <span>{{boardRandom[1].subject}}</span>
+                    </div>
+                    <div class="cardHeader">
+                        <div class="userPic userPicSize" style="background-image:url('/image/{{randomUser[1].userPic}}') ;"></div>
+                        <div class="userid">
+                            <span>{{randomUser[1].userId}}</span>
+                        </div>
+                        <div class="status">
+                            <span>❤️</span>
+                            <span>{{boardRandom[1].liked}}</span>
+                            <span>👁</span>
+                            <span>{{boardRandom[1].viewCount}}</span>
+                        </div>
+                    </div>
+                    <div class="textareas">
+                        <input type="hidden" name="hidden" id="hidden2" value="{{boardRandom[1].content}}" />
+                        <h1 class="textSub">{{boardRandom[1].subject}}</h1>
+                        <div class="textCon2">{{boardRandom[1].content}}</div>
+                        {% for Hash in randomHash[1] %}
+                        <ul id="hashtag">
+                            <li class="textHash">{{Hash.tag}}</li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- 한칸 끝 -->
+            <!-- 한칸 -->
+            <div id="c" class="contentCard">
+                <div class="content_box">
+                    <div class="cardBody">
+                        <img style="background-image: url('/image/{{boardRandom[2].picture}}'); height: calc(40rem * 0.54)" />
+                    </div>
+                    <div class="cardSubject">
+                        <span>{{boardRandom[2].subject}}</span>
+                    </div>
+                    <div class="cardHeader">
+                        <div class="userPic userPicSize" style="background-image:url('/image/{{randomUser[2].userPic}}') ;"></div>
+                        <div class="userid">
+                            <span>{{randomUser[2].userId}}</span>
+                        </div>
+                        <div class="status">
+                            <span>❤️</span>
+                            <span>{{boardRandom[2].liked}}</span>
+                            <span>👁</span>
+                            <span>{{boardRandom[2].viewCount}}</span>
+                        </div>
+                    </div>
+                    <div class="textareas">
+                        <input type="hidden" name="hidden" id="hidden3" value="{{boardRandom[2].content}}" />
+                        <h1 class="textSub">{{boardRandom[2].subject}}</h1>
+                        <div class="textCon3">{{boardRandom[2].content}}</div>
+                        {% for Hash in randomHash[2] %}
+                        <ul id="hashtag">
+                            <li class="textHash">{{Hash.tag}}</li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- 한칸 끝 -->
+            <!-- 한칸 -->
+            <div id="d" class="contentCard">
+                <div class="content_box">
+                    <div class="cardBody">
+                        <img style="background-image: url('/image/{{boardRandom[3].picture}}'); height: calc(40rem * 0.54)" />
+                    </div>
+                    <div class="cardSubject">
+                        <span>{{boardRandom[3].subject}}</span>
+                    </div>
+                    <div class="cardHeader">
+                        <div class="userPic userPicSize" style="background-image:url('/image/{{randomUser[3].userPic}}') ;"></div>
+                        <div class="userid">
+                            <span>{{randomUser[3].userId}}</span>
+                        </div>
+                        <div class="status">
+                            <span>❤️</span>
+                            <span>{{boardRandom[3].liked}}</span>
+                            <span>👁</span>
+                            <span>{{boardRandom[3].viewCount}}</span>
+                        </div>
+                    </div>
+                    <div class="textareas">
+                        <input type="hidden" name="hidden" id="hidden4" value="{{boardRandom[3].content}}" />
+                        <h1 class="textSub">{{boardRandom[3].subject}}</h1>
+                        <div class="textCon4">{{boardRandom[3].content}}</div>
+                        {% for Hash in randomHash[3] %}
+                        <ul id="hashtag">
+                            <li class="textHash">{{Hash.tag}}</li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- 한칸 끝 -->
+            <div id="f"></div>
+            <!-- 한칸 -->
+            <div id="e" class="contentCard">
+                <div class="content_box">
+                    <div class="cardBody">
+                        <img style="background-image: url('/image/{{boardRandom[4].picture}}'); height: calc(40rem * 0.54)" />
+                    </div>
+                    <div class="cardSubject">
+                        <span>{{boardRandom[4].subject}}</span>
+                    </div>
+                    <div class="cardHeader">
+                        <div class="userPic userPicSize" style="background-image:url('/image/{{randomUser[4].userPic}}') ;"></div>
+                        <div class="userid">
+                            <span>{{randomUser[4].userId}}</span>
+                        </div>
+                        <div class="status">
+                            <span>❤️</span>
+                            <span>{{boardRandom[4].liked}}</span>
+                            <span>👁</span>
+                            <span>{{boardRandom[4].viewCount}}</span>
+                        </div>
+                    </div>
+                    <div class="textareas">
+                        <input type="hidden" name="hidden" id="hidden5" value="{{boardRandom[4].content}}" />
+                        <h1 class="textSub">{{boardRandom[4].subject}}</h1>
+                        <div class="textCon5">{{boardRandom[4].content}}</div>
+                        {% for Hash in randomHash[4] %}
+                        <ul id="hashtag">
+                            <li class="textHash">{{Hash.tag}}</li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- 한칸 끝 -->
+            <!-- 한칸 -->
+            <div id="i" class="contentCard">
+                <div class="content_box">
+                    <div class="cardBody">
+                        <img style="background-image: url('/image/{{boardRandom[5].picture}}'); height: calc(40rem * 0.54)" />
+                    </div>
+                    <div class="cardSubject">
+                        <span>{{boardRandom[5].subject}}</span>
+                    </div>
+                    <div class="cardHeader">
+                        <div class="userPic userPicSize" style="background-image:url('/image/{{randomUser[5].userPic}}') ;"></div>
+                        <div class="userid">
+                            <span>{{randomUser[5].userId}}</span>
+                        </div>
+                        <div class="status">
+                            <span>❤️</span>
+                            <span>{{boardRandom[5].liked}}</span>
+                            <span>👁</span>
+                            <span>{{boardRandom[5].viewCount}}</span>
+                        </div>
+                    </div>
+                    <div class="textareas" id="textValue">
+                        <input type="hidden" name="hidden" id="hidden6" value="{{boardRandom[5].content}}" />
+                        <h1 class="textSub">{{boardRandom[5].subject}}</h1>
+                        <div class="textCon6" id="text">{{boardRandom[5].content}}</div>
+                        {% for Hash in randomHash[5] %}
+                        <ul id="hashtag">
+                            <li class="textHash">{{Hash.tag}}</li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- 한칸 끝 -->
+            <!-- 한칸 -->
+            <div id="j" class="contentCard">
+                <div class="content_box">
+                    <div class="cardBody">
+                        <img style="background-image: url('/image/{{boardRandom[6].picture}}'); height: calc(40rem * 0.54)" />
+                    </div>
+                    <div class="cardSubject">
+                        <span>{{boardRandom[6].subject}}</span>
+                    </div>
+                    <div class="cardHeader">
+                        <div class="userPic userPicSize" style="background-image:url('/image/{{randomUser[6].userPic}}') ;"></div>
+                        <div class="userid">
+                            <span>{{randomUser[6].userId}}</span>
+                        </div>
+                        <div class="status">
+                            <span>❤️</span>
+                            <span>{{boardRandom[6].liked}}</span>
+                            <span>👁</span>
+                            <span>{{boardRandom[6].viewCount}}</span>
+                        </div>
+                    </div>
+                    <div class="textareas">
+                        <input type="hidden" name="hidden" id="hidden" value="{{boardRandom[6].content}}" />
+                        <h1 class="textSub">{{boardRandom[6].subject}}</h1>
+                        <div class="textCon">{{boardRandom[6].content}}</div>
+                        {% for Hash in randomHash[6] %}
+                        <ul id="hashtag">
+                            <li class="textHash">{{Hash.tag}}</li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- 한칸 끝 -->
+        </div>
+        <!-- <div class="flexCard">
+            
+        </div> -->
+    </div>
+</div>
+<script src="/js/index.js" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'layout/layout.html'%} {% block css %}
+<link rel="stylesheet" href="/css/management.css" />
+{% endblock %} {% block content %}
+<div id="search_Wrap">
+    <div id="search_result" class="flex">사이트 관리페이지 입니다.</div>
+    <div id="resultBody">
+        <div class="searchBox">
+            <span id="boardSearch" class="searchHeader flex">통계
+                <span> 홈페이지 통계 정보</span>
+            </span>
+            <div class="table">
+                <ul class="tableHeader flex">
+                    <li id="dailyGraph">일자별 통계</li>
+                    <li id="TimeGraph">시간대 통계</li>
+                    <li id="likedGraph">좋아요 통계</li>
+                </ul>
+                
+                <div class="graph" id="chart">
+                    <input type="hidden" class="hideenBar1" value="1">
+                    <input type="hidden" class="hideenBar2" value="2">
+                    <input type="hidden" class="hideenBar3" value="3">
+                    <input type="hidden" class="hideenBar4" value="4">
+                    <input type="hidden" class="hideenBar5" value="5">
+                    <input type="hidden" class="hideenBar6" value="6">
+                    {% for item in count %}
+                    <div class="bar" style="height: 120px; left: 80px; display: none;" id="dateCount">
+                        <div class="dateName">{{item[0]}}
+                            <div class="valueName" id="dateValue">{{item[1]}}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% for item in like %}
+                    <div class="bar" style="height: 120px; left: 80px; display: none;" id="likeCount">
+                        <div class="dateName">{{item[0]}}
+                            <div class="valueName" id="likeValue">{{item[1]}}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% for item in hour %}
+                    <div class="bar" style="height: 120px; left: 80px; display: none;" id="hourCount">
+                        <div class="dateName">{{item[0]}}
+                            <div class="valueName" id="hourValue">{{item[1]}}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+            
+		            <div class="x-axis">
+                        <div class="x-label"></div>
+                        <div class="x-label"></div>
+                        <div class="x-label"></div>
+                        <div class="x-label"></div>
+                        <div class="x-label"></div>
+                    </div>
+	            	<div class="y-axis">
+                        <div class="y-label"></div>
+                        <div class="y-label"></div>
+                        <div class="y-label"></div>
+                        <div class="y-label"></div>
+                        <div class="y-label"></div>
+                        </div>
+                    </div>
+            
+            </div>
+        </div>
+    </div>
+</div> 
+<script type="text/javascript" src="/js/management.js"></script>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'layout/layout.html'%} {% block css %} <link rel="stylesheet" href="/css/error.css" /> {% endblock %} {% block content %}
+<div id="errorWrap">
+    <div id="errorContent">
+        <div id="homeBtn"><a href="/">홈으로</a></div>
+        <div id="message">{{ message }}</div>
+    </div>
+</div>
+<!-- <script src="/js/error.js" type="text/javascript"></script> -->
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'layout/layout.html'%} {% block css %}
+<link rel="stylesheet" href="/css/search.css" />
+{% endblock %} {% block content %}
+<div id="search_Wrap">
+    <div id="search_result" class="flex">내가 쓴 반응 에 대한 검색 결과</div>
+    <div id="resultBody">
+        <div class="searchBox">
+            <span id="userSearch" class="searchHeader flex"
+                >댓글 쓴 게시물
+                <span> 총 {{commentCount}} 개의 검색 결과가 있습니다.</span>
+            </span>
+            <div class="table">
+                <ul class="tableHeader flex">
+                    <li>번호</li>
+                    <li>게시글 제목</li>
+                    <li>작성자</li>
+                    <li>작성일</li>
+                    <li>작성시간</li>
+                </ul>
+                {% for item in commentValue %}
+                <ul class="tableContent flex">
+                    <li>{{loop.index}}</li>
+                    <li><a href="http://127.0.0.1:3005/board/{{ item.mainCd }}/view/{{ item.boardIdx }}">{{ item.subject }}</a></li>
+                    <li>{{item.userId}}</li>
+                    <li>{{item.createdAt}}</li>
+                    <li>{{item.createdTime}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="searchBox">
+            <span id="boardSearch" class="searchHeader flex"
+                >좋아요 한 글
+                <span> 총 {{likeCount}} 개의 검색 결과가 있습니다.</span>
+            </span>
+            <div class="table">
+                <ul class="tableHeader flex">
+                    <li>게시글 번호</li>
+                    <li>게시글 제목</li>
+                    <li>누른 날짜</li>
+                    <li>누른 시간</li>
+                    <li>좋아요 수</li>
+                </ul>
+                {% for item in likeValue %}
+                <ul class="tableContent flex">
+                    <li>{{loop.index}}</li>
+                    <li><a href="http://127.0.0.1:3005/board/{{ item.mainCd }}/view/{{ item.boardIdx }}">{{ item.subject }}</a></li>
+                    <li>{{item.createdAt}}</li>
+                    <li>{{item.createdTime}}</li>
+                    <li>{{item.liked}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

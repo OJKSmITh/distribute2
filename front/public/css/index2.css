@@ -1,0 +1,227 @@
+#communityList {
+    width: 100vw;
+    height: 100%;
+}
+#cate_header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+}
+#cate_header > span {
+    margin-left: 6rem;
+    font-size: 3rem;
+    color: #999;
+}
+#cate_body {
+    width: 100%;
+    height: 126rem;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+.flexCard {
+    width: 120rem;
+    height: 120rem;
+    margin: 0 auto;
+    display: grid;
+    /* background-color: #000000c7; */
+    gap: 1rem;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        "a a b b b . ."
+        "a a b b b e e"
+        ". j j . . e e"
+        ". j j i i . ."
+        "c c c i i d d"
+        "c c c . . d d";
+}
+#a {
+    background-color: #fff;
+    grid-area: a;
+    transform: rotate(30deg);
+}
+
+#b {
+    background-color: #fff;
+    grid-area: b;
+    transform: rotate(-30deg);
+    position: relative;
+    right: 15rem;
+    bottom: -10rem;
+}
+#c {
+    background-color: #fff;
+    grid-area: c;
+    transform: rotate(-20deg);
+    position: relative;
+    bottom: 10rem;
+}
+#d {
+    background-color: #fff;
+    grid-area: d;
+    transform: rotate(60deg);
+    position: relative;
+    right: 7rem;
+    bottom: 20rem;
+}
+#e {
+    background-color: #fff;
+    grid-area: e;
+    transform: rotate(-160deg);
+    position: relative;
+    right: 20rem;
+    bottom: -5rem;
+}
+#f {
+    background-color: #fff;
+    grid-area: f;
+    transform: rotate(45deg);
+}
+#g {
+    background-color: #fff;
+    grid-area: g;
+    transform: rotate(65deg);
+}
+#h {
+    background-color: #fff;
+    grid-area: h;
+    transform: rotate(57deg);
+}
+#i {
+    background-color: #fff;
+    grid-area: i;
+    transform: rotate(85deg);
+}
+#j {
+    background-color: #fff;
+    grid-area: j;
+    transform: rotate(23deg);
+}
+#c > .content_box > .cardHeader > .userid {
+    margin-right: 23rem;
+}
+#d > .content_box > .cardHeader > .userid {
+    width: fit-content;
+    margin: 0;
+}
+/* #d > .content_box > .cardHeader > .status {
+    display: flex;
+    flex-direction: column;
+} */
+
+.contentCard {
+    overflow: hidden;
+    background-color: antiquewhite;
+}
+.contentCard:hover {
+    background-color: rgb(249, 229, 202) !important;
+    z-index: 20;
+}
+
+.content_box {
+    position: relative;
+    top: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    height: 77rem;
+    transition: all 1s;
+}
+.clickEvent {
+    top: -34rem;
+    transition: all 1s;
+}
+
+.cardBody {
+    padding: 2rem;
+    width: 100%;
+    /* height: 30%; */
+}
+.cardBody > img {
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.userPic {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    z-index: 14;
+}
+
+.cardSubject {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    background-color: var(--background-color);
+}
+.userid {
+    width: 10rem;
+    margin-right: 7rem;
+    font-size: 2rem;
+    color: var(--color);
+}
+.status {
+    font-size: 1.6rem;
+    color: var(--color);
+}
+.textareas {
+    padding: 3rem;
+    height: 30rem;
+    overflow-y: scroll;
+}
+.textSub {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+.textareas > div {
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    word-break: break-all;
+}
+
+.textCon1 > .image > img {
+    max-width: 100%;
+}
+
+.textCon2 > .image > img {
+    max-width: 100%;
+}
+
+.textCon3 > .image > img {
+    max-width: 100%;
+}
+
+.textCon4 > .image > img {
+    max-width: 100%;
+}
+
+.textCon5 > .image > img {
+    max-width: 100%;
+}
+
+.textCon6 > .image > img {
+    max-width: 100%;
+}
+
+#hashtag {
+    margin-top: 4rem;
+    display: flex;
+}
+
+.textHash {
+    font-size: 1.4rem;
+}

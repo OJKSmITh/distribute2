@@ -1,0 +1,111 @@
+body {
+    background-image: url("/img/mypage.jpg") !important;
+    background-color: aliceblue !important;
+    background-repeat: no-repeat;
+    height: 120rem;
+}
+#welcomeWrap {
+    height: 80rem;
+    width: 60em;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(/img/welcome2.png);
+    margin: 13rem auto 6rem;
+    opacity: 0.95;
+}
+#welcomeFrm {
+    position: relative;
+    padding: 5rem 0 0 10rem;
+}
+#textfrm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45rem;
+}
+#textfrm > div {
+    margin-bottom: 2rem;
+    width: 75%;
+}
+#userPic {
+    align-items: center;
+    box-shadow: inset 0 0 9px 4px white;
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: 3rem;
+}
+.callifont {
+    font-size: 2.2rem;
+    font-family: "SeoulNamsanC";
+    font-weight: 500;
+    letter-spacing: -1.95px;
+}
+.flex > div:nth-child(2),
+.flex > input {
+    width: 60%;
+    text-align: end;
+}
+.textbox {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 100%;
+}
+.textbox > div:nth-child(1) {
+    align-items: baseline;
+}
+.textbox > div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+    word-break: break-all;
+    text-align: end;
+    font-size: 1.8rem;
+}
+#userIntro > div > div > span {
+    width: 50%;
+}
+.Btn {
+    margin-left: 15rem;
+    font-size: 1.6rem !important;
+}
+.Btn > a {
+    color: var(--color) !important;
+}
+.myPageBtn,
+button {
+    width: 18rem;
+    height: 4rem;
+    background-color: #be8962;
+    color: #333;
+    font-size: 2.4rem;
+    border-radius: 1.5rem;
+    border: none;
+    font-family: "SeoulNamsanC";
+    font-weight: 500;
+}
+.flex-Ab {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 70%;
+    bottom: -4rem;
+}
+input {
+    width: 100%;
+    text-align: end;
+    font-size: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #00000020;
+    font-family: initial;
+}
+textarea {
+    font-size: 2rem;
+    text-align: end;
+    border-radius: 0.5rem;
+    background-color: #00000020;
+    border: none;
+    font-family: initial;
+}

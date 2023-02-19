@@ -1,0 +1,108 @@
+#communityList {
+    width: 100vw;
+    height: 100%;
+}
+#cate_header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+}
+#cate_header > span {
+    margin-left: 6rem;
+    font-size: 3rem;
+    color: #999;
+}
+#cate_body {
+    width: 100%;
+    height: 93rem;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+.flexCard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+.contentCard {
+    overflow: hidden;
+    width: 40rem;
+    height: 42rem;
+    background-color: antiquewhite;
+}
+.content_box {
+    position: relative;
+    top: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 40rem;
+    height: 77rem;
+    transition: all 1s;
+}
+.clickEvent {
+    top: -37rem;
+    transition: all 1s;
+}
+.cardBody {
+    padding: 2rem;
+}
+.cardBody > img {
+    width: 100%;
+    height: 100%;
+    background-color: cadetblue;
+    background-image: url(sldjflsdjf);
+}
+
+.userPic {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    /* background-color: rgb(69, 72, 246); */
+}
+.cardBody {
+    width: 40rem;
+    height: 28rem;
+}
+.cardSubject {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 0 2rem;
+    margin-top: 3rem;
+    background-color: var(--background-color);
+}
+.userid {
+    width: 10rem;
+    margin-right: 7rem;
+    font-size: 2rem;
+    color: var(--color);
+}
+.status {
+    font-size: 1.6rem;
+    color: var(--color);
+}
+.textareas {
+    padding: 4rem;
+    height: 30rem;
+}
+.textSub {
+    margin-top: 4rem;
+    font-size: 3rem;
+}
+.textCon {
+    display: block;
+    margin-top: 4rem;
+    font-size: 1.8rem;
+}
+#hashtag {
+    margin-top: 4rem;
+    display: flex;
+}

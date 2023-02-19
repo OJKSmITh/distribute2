@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* text-align: center; */
+}
+
+#contentArea {
+    width: 120rem;
+    height: 80rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+#writeFrm {
+    padding: 3rem 2rem;
+    width: 120rem;
+    margin: 0 auto;
+    background-color: rgb(248, 221, 182);
+    border-radius: 1rem;
+}
+#editor {
+    border: 1px solid;
+    width: 50%;
+    margin: 0 auto;
+    height: 50rem;
+}
+.categoryMain {
+    width: 10rem;
+    font-size: 2rem;
+    margin: 2rem 0 2rem 0;
+    background-color: var(--background-color);
+}
+#subjectBack {
+    height: 4rem;
+}
+#subject {
+    background: transparent;
+    display: block;
+    padding: 0px;
+    font-size: 2.55rem;
+    width: 100%;
+    resize: none;
+    line-height: 1.5rem;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    color: var(--background-color);
+}
+.ck-placeholder {
+    font-size: 1.5rem;
+}
+#BtnArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+#hashTag {
+    width: 100%;
+    height: 4.05rem;
+    background-color: #fff;
+}
+#hashTag > input {
+    width: 100%;
+    height: 100%;
+}
+
+#subjectBack {
+    background-color: var(--white);
+}
+.tagify__dropdown {
+    font-size: 16px;
+}
+#container {
+    width: 100%;
+    height: fit-content;
+    margin: 20px auto;
+    overflow-y: scroll;
+    font-size: 1.6rem;
+}
+.ck-editor__main[role="presentation"] {
+    overflow-y: scroll;
+}
+.ck-editor__editable[role="textbox"] {
+    /* editing area */
+    min-height: 30rem;
+    max-height: 48rem;
+}
+.ck-content .image {
+    /* block images */
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+.writeSubBtn {
+    width: 15rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    font-size: 1.8rem;
+    border: none;
+    color: var(--color);
+    background: var(--btnColor);
+    outline: none;
+}

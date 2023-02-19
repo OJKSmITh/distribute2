@@ -1,0 +1,60 @@
+{% extends 'layout/layout.html'%} {% block css %}
+<link rel="stylesheet" href="/css/search.css" />
+{% endblock %} 
+{% block content %}
+<div id="search_Wrap">
+    <div id="search_result" class="flex">' {{search}} '에 대한 검색 결과</div>
+    <div id="resultBody">
+        <div class="searchBox">
+            <span id="userSearch" class="searchHeader flex"
+                >제목 검색 결과
+                <span> 총 {{subjectlength}} 개의 검색 결과가 있습니다.</span>
+            </span>
+            <div class="table">
+                <ul class="tableHeader flex">
+                    <li>번호</li>
+                    <li>아이디</li>
+                    <li>게시글</li>
+                    <li>좋아요</li>
+                    <li>작성일</li>
+                </ul>
+                {% for item in subjectResponse %}
+                    {% set boardPath = '/board/' + mainCd + '/view/' + item.boardIdx %}
+                <ul class="tableContent flex">
+                    <li>{{loop.index}}</li>
+                    <li>{{item.userId}}</li>
+                    <li><a href="{{ boardPath }}">{{item.subject}}</a></li>
+                    <li>{{item.liked}}</li>
+                    <li>{{item.createdAt}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="searchBox">
+            <span id="boardSearch" class="searchHeader flex">
+                작성자 검색 결과
+                <span> 총 {{userlength}} 개의 검색 결과가 있습니다.</span>
+            </span>
+            <div class="table">
+                <ul class="tableHeader flex">
+                    <li>게시글 번호</li>
+                    <li>게시글 제목</li>
+                    <li>작성자</li>
+                    <li>작성일</li>
+                    <li>추천수</li>
+                </ul>
+                {% for item in adminResponse %}
+                {% set boardPath = '/board/' + mainCd + '/view/' + item.boardIdx %}
+                <ul class="tableContent flex">
+                    <li>{{loop.index}}</li>
+                    <li><a href="{{ boardPath }}">{{item.subject}}</a></li>
+                    <li>{{item.userId}}</li>
+                    <li>{{item.createdAt}}</li>
+                    <li>{{item.liked}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

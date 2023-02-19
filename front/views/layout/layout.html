@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="/css/root.css" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link href="/css/font.css" type="css/text" rel="stylesheet" />
+        {% block css %} {% endblock %}
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <div id="nav" class="flex-center">
+                    <img src="/img/nav2.png" class="deg2" />
+                </div>
+                <div id="logo">
+                    <a href="/">
+                        <img src="/img/logo.png" />
+                    </a>
+                </div>
+
+                <div id="logBtn">
+                    <form id="searchWrap" action="/search" method="get">
+                        <input type="text" name="search" id="search" class="off3" />
+                    </form>
+                    <div id="searchBtn" class="circle9">
+                        <a href="#"></a>
+                    </div>
+                    <div id="notifyIcon" class="circle9">
+                        <div id="notifybadge" class="none">
+                            <span></span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="userId" value="{{userId}}" />
+                    {% if userId and userId !== "guest" and provider === "local" %}
+                    <div id="userInfo" class="circle9 userPicSize" style="background-image: url('/image/{{userPic}}');">
+                        <a href="#"></a>
+                    </div>
+                    {% elif userId and userId !== "guest" and provider === "kakao" %}
+                    <div id="userInfo" class="circle9 userPicSize" style="background-image: url('{{userPic}}');">
+                        <a href="#"></a>
+                    </div>
+                    {% else %}
+                    <div id="userInfo" class="circle9">
+                        <a href="#"></a>
+                    </div>
+
+                    {% endif %}
+                </div>
+            </div>
+
+            <ul id="gnb" class="off gnb_flex">
+                <div id="hotBoard" class="gnb-h2">
+                    <div class="hotPost">
+                        <span class="font-color font-h2">인기 게시글</span>
+                    </div>
+                    {% for boardHot in boardHot%}
+                    <!-- board card 1pcs -->
+                    <div class="hotPost-list">
+                        <ul class="flex">
+                            <li class="hotPost-pic userPicSize" style="background-image: url('/img/liked.png')"></li>
+                            <li class="hotPost-subject gnb-h3">
+                                <a href="http://127.0.0.1:3005/board/{{boardHot.cateCd}}/view/{{boardHot.boardIdx}}" class="font-color">{{boardHot.subject}}</a>
+                                <a href="#" class="font-color">{{boardHot.userId}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- board card 1pcs end -->
+                    {% endfor %}
+                </div>
+                <div class="gnb-h2">
+                    <div class="hotPost">
+                        <span class="font-color font-h2">인기 멤버</span>
+                    </div>
+                    <!-- user card 1pcs -->
+                    {% for item in userHot %}
+                    <div class="flex">
+                        <div class="best-user-pic userPicSize" style="background-image: url('/image/{{item.userPic}}');"></div>
+                        <div class="hotUser-subject">
+                            <div class="font-color">
+                                <span>{{item.userId}}</span>
+                            </div>
+                            <div class="">
+                                <div class="font-color">
+                                    <span>회원 점수</span>
+                                    <span>{{item.userPoint}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- user card 1pcs end -->
+                </div>
+            </ul>
+
+            {% if userId and userId !== "guest" %}
+            <ul id="infoGnb" class="off2 gnb_flex">
+                <li><a href="/">메인페이지</a></li>
+                <li><a href="/board/notice?page=1">공지사항</a></li>
+                <li><a href="/board/community?page=1">자유게시판</a></li>
+                <li><a href="/board/qna?page=1">Q&A</a></li>
+                <li id="line"></li>
+                <li></li>
+                <li><a href="/profile/{{userId}}">마이페이지</a></li>
+                <li><a href="/user/myview?page=1">나의 글</a></li>
+                <li><a href="/user/myview/reaction?page=1">나의 반응</a></li>
+                <li><a id="logout">로그아웃</a></li>
+            </ul>
+            {% else %}
+            <ul id="infoGnb" class="off2 gnb_flex">
+                <li><a href="/login">시작하기</a></li>
+            </ul>
+            {% endif %} {% if userId %}
+            <div id="chatIcon">
+                <div id="chatIcon_view">
+                    <div class="wave1"></div>
+                    <div class="wave2"></div>
+                    <div class="wave3"></div>
+                    <div class="wave4"></div>
+                </div>
+                <div id="imgs">
+                    <span id="sh" class="userPicSize"></span>
+                </div>
+            </div>
+            <div id="notification" class="none">
+                <div id="innerNotification">
+                    <ul class="notilist check"></ul>
+                </div>
+            </div>
+            <div id="chatWindow" class="close">
+                <div id="chatHeader">
+                    <div id="closeBtn"></div>
+                </div>
+                <div id="chatBody">
+                    <ul id="chat">
+                        <li class="left"><span class="flex-center"> 123q11we </span></li>
+                        <li class="right">
+                            <span class="flex-center"> sdfjlaksdfjahkjasdfkjjsadlkfjlksadfjlksadfjlksadjlkasdjalskdfjasdflkjasdfoiwjoifjwoeifj123qwe </span>
+                        </li>
+                        <li class="left">
+                            <p></p>
+                            <span class="flex-center reply">
+                                <p>${data}sdfsdfsdfsdfsdfsdfsdfsdf</p>
+                            </span>
+                        </li>
+                    </ul>
+                    <form id="frm">
+                        <input type="hidden" name="nickName" value="{{nickName}}" />
+                        <input type="text" name="message" id="chatInput" />
+                        <button type="submit" id="chatSubmit">전송</button>
+                    </form>
+                </div>
+            </div>
+            {% endif %} {% block content %} {% endblock %}
+        </div>
+        <script src="/js/root.js" type="module"></script>
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    </body>
+</html>

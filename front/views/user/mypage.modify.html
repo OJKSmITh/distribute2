@@ -1,0 +1,63 @@
+{% extends 'layout/layout.html'%} {% block css %}<link rel="stylesheet" href="/css/welcome.css" type="text/css" />{% endblock %}{% block content %}
+
+<div id="welcomeWrap" class="init">
+    <form id="welcomeFrm" class="flexColumn" method="post" action="/profile/{{userId}}">
+        <div id="userPic" class="userPicSize" style="background-image: url('/image/{{userPic}}');"></div>
+        <div id="textfrm">
+            <input type="file" placeholder="upload" style="font-size: 1.4rem" name="userPic" multiple hidden />
+            <div id="userId" class="callifont flex">
+                <div>아이디 :</div>
+                <input type="text" value="{{userId}}" class="userId" name="userId" readonly />
+            </div>
+            <div id="userName" class="callifont flex">
+                <div>이름 :</div>
+                <input type="text" value="{{userName}}" name="userName" />
+            </div>
+            <div id="nickName" class="callifont flex">
+                <div>닉네임 :</div>
+                <input type="text" value="{{nickName}}" name="nickName" />
+            </div>
+            <div id="userAdress1" class="callifont flex">
+                <div>주소 :</div>
+                <input type="address1" name="address1" id="eventAddress" value="{{address}}" onclick="CheckAddress()" readonly />
+            </div>
+            <div id="userAdress2" class="callifont flex">
+                <div>상세주소 :</div>
+                <input type="address2" id="inputAddress" name="address2" />
+            </div>
+            <div id="gender" class="callifont flex">
+                <div>GENDER :</div>
+                <input type="text" value="{{gender}}" name="gender" />
+            </div>
+            <div id="phoneNum" class="callifont flex">
+                <div>PHONE :</div>
+                <input type="text" value="{{phoneNum}}" name="phoneNum" />
+            </div>
+            <div id="userEmail" class="callifont flex">
+                <div>E-Mail :</div>
+                <input type="text" value="{{userEmail}}" name="userEmail" />
+            </div>
+            <div id="userIntro" class="callifont textbox">
+                <div>INTRODUCTION :</div>
+                <div>
+                    <span></span>
+                    <span><textarea name="userIntro">{{userIntro}}</textarea></span>
+                </div>
+            </div>
+        </div>
+        <button type="submit" id="submitBtn">수정완료</button>
+    </form>
+</div>
+<div id="layer" style="display: none; position: fixed; overflow: hidden; z-index: 1; -webkit-overflow-scrolling: touch">
+    <img
+        src="//t1.daumcdn.net/postcode/resource/images/close.png"
+        id="btnCloseLayer"
+        style="cursor: pointer; position: absolute; right: -3px; top: -3px; z-index: 1"
+        onclick="closeDaumPostcode()"
+        alt="닫기 버튼"
+    />
+</div>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="/js/mypage.modify.js" type="text/javascript"></script>
+<script src="/js/modify.address.js"></script>
+{% endblock %}

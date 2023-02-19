@@ -1,0 +1,57 @@
+{% extends 'layout/layout.html'%} {% block css %}
+<link rel="stylesheet" href="/css/search.css" />
+{% endblock %} {% block content %}
+<div id="search_Wrap">
+    <div id="search_result" class="flex">' {{search}} '에 대한 검색 결과</div>
+    <div id="resultBody">
+        <div class="searchBox">
+            <span id="userSearch" class="searchHeader flex"
+                >유저 정보
+                <span> 총 {{userCount}} 개의 검색 결과가 있습니다.</span>
+            </span>
+            <div class="table">
+                <ul class="tableHeader flex">
+                    <li>번호</li>
+                    <li>아이디</li>
+                    <li>닉네임</li>
+                    <li>게시글</li>
+                    <li>포인트</li>
+                </ul>
+                {% for item in userValue %}
+                <ul class="tableContent flex">
+                    <li>{{loop.index}}</li>
+                    <li>{{item.userId}}</li>
+                    <li>{{item.nickName}}</li>
+                    <li>{{item.userBoard}}</li>
+                    <li>{{item.userPoint}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="searchBox">
+            <span id="boardSearch" class="searchHeader flex"
+                >게시판 정보
+                <span> 총 {{boardCount}} 개의 검색 결과가 있습니다.</span>
+            </span>
+            <div class="table">
+                <ul class="tableHeader flex">
+                    <li>게시글 번호</li>
+                    <li>게시글 제목</li>
+                    <li>작성자</li>
+                    <li>작성일</li>
+                    <li>추천수</li>
+                </ul>
+                {% for item in data1 %}
+                <ul class="tableContent flex">
+                    <li>{{loop.index}}</li>
+                    <li><a href="http://127.0.0.1:3005/board/{{item.mainCd}}/view/{{item.boardIdx}}">{{item.subject}}</a></li>
+                    <li>{{item.userId}}</li>
+                    <li>{{item.createdAt}}</li>
+                    <li>{{item.liked}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
