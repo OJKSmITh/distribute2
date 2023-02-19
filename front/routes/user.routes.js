@@ -3,7 +3,7 @@ const router = express.Router()
 const axios = require("axios")
 const upload = require("../midlewares/upload")
 const request = axios.create({
-    baseURL: "http://127.0.0.1:3000",
+    baseURL: "http://3.34.194.23:3000",
     withCredentials: true,
 })
 
@@ -69,7 +69,6 @@ router.get("/myview", async (req, res, next) => {
         next(e)
     }
 })
-
 
 // 내가 좋아요 누른 글, 내가 쓴 글
 router.get("/myview/reaction", async (req, res, next) => {

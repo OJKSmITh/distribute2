@@ -1,5 +1,5 @@
 const request = axios.create({
-    baseURL: "http://127.0.0.1:3000",
+    baseURL: "http://3.34.194.23:3000",
     withCredentials: true,
 })
 
@@ -59,9 +59,9 @@ joinFrm.addEventListener("input", async (e) => {
         const { data } = response
 
         if (data) {
-            checkNick.style.display = 'block'
+            checkNick.style.display = "block"
         } else {
-            checkNick.style.display = 'none'
+            checkNick.style.display = "none"
         }
     }
 })
@@ -105,7 +105,7 @@ form.addEventListener("submit", async (e) => {
     }
 })
 const HOST = `https://kauth.kakao.com`
-const REDIRECT_URI = `http://127.0.0.1:3000/oauth/kakao`
+const REDIRECT_URI = `http://3.34.194.23:3000/oauth/kakao`
 const REST_API_KEY = `6f3af7393558bd75aa668cd31cc22396`
 
 kakao.addEventListener("click", async (e) => {
@@ -117,33 +117,33 @@ kakao.addEventListener("click", async (e) => {
 signUpButton.addEventListener("click", () => {
     container.classList.add("right-panel-active")
     termsCheckLayout()
-    iFrameContainer.style.display = "block";
-  });
-  
+    iFrameContainer.style.display = "block"
+})
+
 signInButton.addEventListener("click", () => {
-    container.classList.remove("right-panel-active");
-    });
-   
+    container.classList.remove("right-panel-active")
+})
+
 agreeBtn.addEventListener("click", () => {
-    termsCheckbox.checked = true;
-    iFrameContainer.style.display = "none";
-    });
-  
+    termsCheckbox.checked = true
+    iFrameContainer.style.display = "none"
+})
+
 cancelBtn.addEventListener("click", () => {
-    termsCheckbox.checked = false;
-    iFrameContainer.style.display = "none";
-    container.classList.remove("right-panel-active");
-    });
-  
+    termsCheckbox.checked = false
+    iFrameContainer.style.display = "none"
+    container.classList.remove("right-panel-active")
+})
+
 const termsCheckLayout = () => {
-    const width = 400;
-    const height = 500;
-    const borderWidth = 0;
-    
-    iFrameContainer.style.width = `${width}px`;
-    iFrameContainer.style.height = `${height}px`;
-    iFrameContainer.style.border = `${borderWidth}px solid`;
-    iFrameContainer.style.backgroundColor = "white";
-    iFrameContainer.style.left = `${(((window.innerWidth || document.documentElement.clientWidth) - width) / 1.5 - borderWidth)}px`;
-    iFrameContainer.style.top = `${(((window.innerHeight || document.documentElement.clientHeight) - height) / 2 - borderWidth)}px`;
-    };
+    const width = 400
+    const height = 500
+    const borderWidth = 0
+
+    iFrameContainer.style.width = `${width}px`
+    iFrameContainer.style.height = `${height}px`
+    iFrameContainer.style.border = `${borderWidth}px solid`
+    iFrameContainer.style.backgroundColor = "white"
+    iFrameContainer.style.left = `${((window.innerWidth || document.documentElement.clientWidth) - width) / 1.5 - borderWidth}px`
+    iFrameContainer.style.top = `${((window.innerHeight || document.documentElement.clientHeight) - height) / 2 - borderWidth}px`
+}

@@ -8,7 +8,7 @@ const mainValue = document.querySelector("#mainCd")
 const categoryMain = document.querySelector(".categoryMain")
 const input = document.querySelector(".tagify--outside")
 const request = axios.create({
-    baseURL: "http://127.0.0.1:3000",
+    baseURL: "http://3.34.194.23:3000",
     withCredentials: true,
 })
 
@@ -20,7 +20,6 @@ const tagify = new Tagify(input, {
         enabled: 0,
     },
 })
-
 
 CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
     toolbar: {
@@ -157,38 +156,36 @@ CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
             // location.href = document.referer
         })
         submitBtn.addEventListener("click", (e) => {
-            e.preventDefault();
+            e.preventDefault()
             if (!subject.value.trim() || !editor.getData().trim()) {
-                alert("모든 입력 항목은 필수입니다.");
-                return;
+                alert("모든 입력 항목은 필수입니다.")
+                return
             }
-            const userId = writer.value;
+            const userId = writer.value
             const mainCd = mainValue.value
-            
-            const subCd = categoryMain.value;
-            const content = editor.getData();
-            const hash = tagify.value.map((tag) => tag.value).join(",");
-            const data = { subject: subject.value, content, userId, mainCd, subCd, hash };
+
+            const subCd = categoryMain.value
+            const content = editor.getData()
+            const hash = tagify.value.map((tag) => tag.value).join(",")
+            const data = { subject: subject.value, content, userId, mainCd, subCd, hash }
             request
                 .post(`/board/${mainCd}/write`, { data })
                 .then((response) => {
                     console.log(response)
-                    const { hashValue, newBoard } = response.data;
-                    const {boardIdx} = newBoard
-                    location.href = `/board/${mainCd}/viewcheck/${boardIdx}`;
+                    const { hashValue, newBoard } = response.data
+                    const { boardIdx } = newBoard
+                    location.href = `/board/${mainCd}/viewcheck/${boardIdx}`
                 })
                 .catch((error) => {
-                    alert("글 작성에 실패했습니다.");
-                    console.error(error);
-                });
-        });
-        
+                    alert("글 작성에 실패했습니다.")
+                    console.error(error)
+                })
+        })
 
-        var editor = CKEDITOR.instances.editor1;
-        var data = editor.getData();
-        editor.setData(data);
+        var editor = CKEDITOR.instances.editor1
+        var data = editor.getData()
+        editor.setData(data)
     })
     .catch((error) => {
         // console.error(error)
     })
-
