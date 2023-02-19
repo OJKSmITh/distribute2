@@ -292,6 +292,7 @@ class BoardRepository {
             for (let i = 0; i < boardFile.length; i++) {
                 const response = await this.picture.findOrCreate({ where: { boardIdx, picture: boardFile[i] } })
             }
+            console.log()
         } catch (e) {
             throw new Error(`Error while delete status: ${e.message}`)
         }

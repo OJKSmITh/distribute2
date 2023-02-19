@@ -174,7 +174,7 @@ CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
                     console.log(response)
                     const { hashValue, newBoard } = response.data
                     const { boardIdx } = newBoard
-                    location.href = `/board/${mainCd}/viewcheck/${boardIdx}`
+                    location.href = `/board/${mainCd}/view/${boardIdx}`
                 })
                 .catch((error) => {
                     alert("글 작성에 실패했습니다.")
