@@ -255,8 +255,7 @@ class BoardService {
             })
             const file = await this.fs.readdir("../front/uploads")
             const boardFile = file.filter((x) => x.startsWith(`${boardIdx}`))
-            console.log(boardFile)
-            console.log(boardIdx)
+            console.log(boardFile,"boardService *************************")
             const response = await this.boardRepository.pictureCreate({ boardFile, boardIdx })
             return response
         } catch (e) {

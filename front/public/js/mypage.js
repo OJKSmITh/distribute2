@@ -23,5 +23,7 @@ const backBtnHandler = () => {
 //     console.log(e.target)
 // }
 modifyBtn.addEventListener("click", modifyHandler)
-backBtn.addEventListener("click", backBtnHandler)
+backBtn.addEventListener("click", backBtnHandler);
 // submitBtn.addEventListener("submit", submitHandler)
+
+

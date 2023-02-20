@@ -99,7 +99,7 @@ router.get("/manage", async (req, res, next) => {
         }
 
         const hours = {}
-
+        
         for (const board of boards) {
             const createdAt = new Date(board.createdAt)
             const hour = createdAt.toISOString().slice(11, 13)
@@ -107,14 +107,14 @@ router.get("/manage", async (req, res, next) => {
                 hours[hour] = 0
             }
             hours[hour]++
-        }
-        let countArray = Object.entries(counts)
+        }        
+        let countArray =Object.entries(counts)
         let likesArray = Object.entries(likes)
-        let hoursArray = Object.entries(hours)
+        let hoursArray =Object.entries(hours)
         console.log(countArray)
         console.log(likesArray)
         console.log(hoursArray)
-        res.render("user/management.html", { count: countArray, like: likesArray, hour: hoursArray })
+        res.render("user/management.html", {count : countArray, like : likesArray, hour : hoursArray})
     } catch (e) {
         next(e)
     }
@@ -159,8 +159,8 @@ router.get("/", async (req, res, next) => {
         const { boardHot } = req
         const { userHot } = req
         const response = await request.get("/board/random")
-        console.log(response)
         const { listValue, randomUser, randomHash } = response.data
+        console.log(listValue)
         res.render("index.html", { ...userInfo, boardHot, userHot, boardRandom: listValue, randomUser, randomHash })
     } catch (e) {
         next(e)

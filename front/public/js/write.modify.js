@@ -167,4 +167,5 @@ CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
         var data = editor.getData()
         editor.setData(data)
     })
-    .catch((error) => {})
+    .catch((error) => {
+    })

@@ -21,6 +21,7 @@ const tagify = new Tagify(input, {
     },
 })
 
+
 CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
     toolbar: {
         items: [
@@ -156,36 +157,38 @@ CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
             // location.href = document.referer
         })
         submitBtn.addEventListener("click", (e) => {
-            e.preventDefault()
+            e.preventDefault();
             if (!subject.value.trim() || !editor.getData().trim()) {
-                alert("모든 입력 항목은 필수입니다.")
-                return
+                alert("모든 입력 항목은 필수입니다.");
+                return;
             }
-            const userId = writer.value
+            const userId = writer.value;
             const mainCd = mainValue.value
-
-            const subCd = categoryMain.value
-            const content = editor.getData()
-            const hash = tagify.value.map((tag) => tag.value).join(",")
-            const data = { subject: subject.value, content, userId, mainCd, subCd, hash }
+            
+            const subCd = categoryMain.value;
+            const content = editor.getData();
+            const hash = tagify.value.map((tag) => tag.value).join(",");
+            const data = { subject: subject.value, content, userId, mainCd, subCd, hash };
             request
                 .post(`/board/${mainCd}/write`, { data })
                 .then((response) => {
                     console.log(response)
-                    const { hashValue, newBoard } = response.data
-                    const { boardIdx } = newBoard
-                    location.href = `/board/${mainCd}/view/${boardIdx}`
+                    const { hashValue, newBoard } = response.data;
+                    const {boardIdx} = newBoard
+                    location.href = `/board/${mainCd}/viewcheck/${boardIdx}`;
                 })
                 .catch((error) => {
-                    alert("글 작성에 실패했습니다.")
-                    console.error(error)
-                })
-        })
+                    alert("글 작성에 실패했습니다.");
+                    console.error(error);
+                });
+        });
+        
 
-        var editor = CKEDITOR.instances.editor1
-        var data = editor.getData()
-        editor.setData(data)
+        var editor = CKEDITOR.instances.editor1;
+        var data = editor.getData();
+        editor.setData(data);
     })
     .catch((error) => {
         // console.error(error)
     })
+
