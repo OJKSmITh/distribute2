@@ -73,8 +73,8 @@ app.get("/oauth/kakao", async (req, res, next) => {
             defaults: sns,
         })
         const bodys = sns
-        const result = await axios.post("http://3.34.194.23:3000/auth", bodys)
-        res.redirect(`http://3.34.194.23:3005/token/${result.data.token}`)
+        const result = await axios.post("http://52.78.193.209:3000/auth", bodys)
+        res.redirect(`http://52.78.193.209:3005/token/${result.data.token}`)
     } catch (error) {
         next(error)
     }
