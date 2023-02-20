@@ -8,7 +8,7 @@ const mainValue = document.querySelector("#mainCd")
 const categoryMain = document.querySelector(".categoryMain")
 const input = document.querySelector(".tagify--outside")
 const request = axios.create({
-    baseURL: "http://52.78.193.209:3000",
+    baseURL: "http://3.38.214.112:3000",
     withCredentials: true,
 })
 

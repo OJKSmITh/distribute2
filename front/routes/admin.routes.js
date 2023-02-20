@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios")
 const upload = require("../midlewares/upload")
 const request = axios.create({
-    baseURL: "http://52.78.193.209:3000",
+    baseURL: "http://3.38.214.112:3000",
     withCredentials: true,
 })
 

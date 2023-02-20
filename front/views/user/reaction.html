@@ -20,7 +20,7 @@
                 {% for item in commentValue %}
                 <ul class="tableContent flex">
                     <li>{{loop.index}}</li>
-                    <li><a href="http://52.78.193.209:3005/board/{{ item.mainCd }}/view/{{ item.boardIdx }}">{{ item.subject }}</a></li>
+                    <li><a href="http://3.38.214.112:3005/board/{{ item.mainCd }}/view/{{ item.boardIdx }}">{{ item.subject }}</a></li>
                     <li>{{item.userId}}</li>
                     <li>{{item.createdAt}}</li>
                     <li>{{item.createdTime}}</li>
@@ -44,7 +44,7 @@
                 {% for item in likeValue %}
                 <ul class="tableContent flex">
                     <li>{{loop.index}}</li>
-                    <li><a href="http://52.78.193.209:3005/board/{{ item.mainCd }}/view/{{ item.boardIdx }}">{{ item.subject }}</a></li>
+                    <li><a href="http://3.38.214.112:3005/board/{{ item.mainCd }}/view/{{ item.boardIdx }}">{{ item.subject }}</a></li>
                     <li>{{item.createdAt}}</li>
                     <li>{{item.createdTime}}</li>
                     <li>{{item.liked}}</li>
