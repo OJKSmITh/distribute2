@@ -141,17 +141,13 @@ class BoardRepository {
     async randomValue() {
         try {
             const boardRandom = await this.sequelize.query(
-                `SELECT A.userId, A.subject, A.viewCount, A.liked, A.boardIdx, A.cateCd ,MIN(B.picture) AS picture
-                FROM (
-                  SELECT userId, subject, viewCount, liked, content, boardIdx, cateCd 
-                  FROM Board 
-                  ORDER BY RAND() LIMIT 7
-                ) A 
-                JOIN Picture B ON A.boardIdx = B.boardIdx 
-                GROUP BY A.userId, A.subject, A.viewCount, A.liked, A.boardIdx, A.cateCd`,
+                `SELECT A.userId, A.subject, A.viewCount, A.liked, A.boardIdx, A.cateCd, MIN(B.picture) AS picture
+                FROM Board A
+                JOIN Picture B ON A.boardIdx = B.boardIdx
+                GROUP BY A.boardIdx
+                ORDER BY RAND() LIMIT 7`,
                 { type: this.queryTypes.SELECT }
             )
-            console.log(boardRandom, "============================")
             const randomUser = []
             const randomHash = []
             for (let i = 0; i < boardRandom.length; i++) {
@@ -289,10 +285,11 @@ class BoardRepository {
     async pictureCreate(payload) {
         try {
             const { boardIdx, boardFile } = payload
+            console.log(payload, "&&&&&&&&&&&&&&&&&&&&&&&&&&")
             for (let i = 0; i < boardFile.length; i++) {
                 const response = await this.picture.findOrCreate({ where: { boardIdx, picture: boardFile[i] } })
             }
-            console.log()
+
         } catch (e) {
             throw new Error(`Error while delete status: ${e.message}`)
         }

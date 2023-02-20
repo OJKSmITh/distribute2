@@ -123,6 +123,7 @@ class BoardController {
     async pictureInsert(req, res, next) {
         try {
             const { arr, boardIdx } = req.body
+            console.log(req.body, "boardCon=====================")
             const result = await this.boardService.PictureCreate({ arr, boardIdx })
             res.status(201).json(result)
         } catch (e) {

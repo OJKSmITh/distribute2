@@ -70,6 +70,7 @@ router.get("/myview", async (req, res, next) => {
     }
 })
 
+
 // 내가 좋아요 누른 글, 내가 쓴 글
 router.get("/myview/reaction", async (req, res, next) => {
     try {
